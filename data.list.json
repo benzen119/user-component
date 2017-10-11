@@ -1,0 +1,32 @@
+{
+	"comments":[
+
+	{
+		"name":"Mike Ross",
+		"body":"Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. ",
+    "time_ago":"1d" 
+  },
+
+	{
+    "name":"Rachel Zein",
+		"body":"Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. ",
+    "time_ago":"1d" 
+  },
+
+  {
+    "name":"Louis Litt",
+		"body":"Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. ",
+    "time_ago":"1d" 
+  }	
+				],
+				
+    "profile":
+    
+		{
+			"name": "Harvey Specter",
+      "location": "New York, USA",
+      "likes": 121,
+      "following": 723,
+      "followers": 4433
+		}
+}

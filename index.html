@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Task</title>
+	<meta name="description" content="xd" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<link href="https://fonts.googleapis.com/css?family=Work+Sans:400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,600" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+	<script src="node_modules/moment/moment.js"></script>
+	<script src="node_modules/angular-moment/angular-moment.js"></script>
+</head>
+
+<body ng-app="myApp" ng-controller="myCtrl">
+
+<div class="container main-container">
+	<div class="blue-header"></div>
+	<div class="container heading-container">
+		<div class="row share-row">
+			<a href="#"><img class="share pull-right" src="./assets/share.png" alt="share-icon" data-toggle="modal" data-target="#myModal" /></a>
+		</div>
+		
+		<div class="row user-row">
+			<div class="col-sm-2">
+				<img src="./assets/avatar.png" class="image" alt="profile-img"/>
+			</div>
+			<div class="col-sm-10">
+				<p class="user-info"><span class="name">{{profile.name}}</span><a href="#" ng-click="addLike()"><img class="heart" src="./assets/heart.png" alt="like-heart" /></a><br>
+				   <span class="location">{{profile.location}}</span></p>
+			</div>
+		</div>
+		<div class="row stats-row">
+			<div class="col-sm-7">
+				<ul>
+					<li>
+						<a href="#">
+							<p>
+								<span class="amount">{{profile.likes}}</span><br>
+								<span class="amount-label">Likes</span>
+							</p>
+						</a>		
+					</li>
+					<li>
+						<a href="#">
+							<p>
+								<span class="amount">{{profile.following}}</span><br>
+								<span class="amount-label">Following</span>
+							</p>
+						</a>		
+					</li>
+					<li>
+						<a href="#">
+							<p>
+								<span class="amount">{{profile.followers}}</span><br>
+								<span class="amount-label">Followers</span>
+							</p>
+						</a>		
+					</li>	
+				</ul>
+			</div>
+			<div class="col-sm-5">
+				<button class="btn btn-follow" ng-click="addFollowers()">FOLLOW</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="container comments-container">
+		<div class="row">
+			<div class="col-sm-12">
+					<a href="#"><p class="hide-comments">Hide comments ({{comments.length}})</p></a>
+			</div>
+		</div>
+
+		<div class="comments-wrapper" id="wrapper">
+			<div class="media" ng-repeat="x in comments">
+				<div class="media-left">
+				  <img src="./assets/avatar-small.png" alt="small-avatar" class="media-object">
+				</div>
+				<div class="media-body">
+				  <h5 class="media-heading">{{x.name}}<span class="time-ago pull-right" am-time-ago="x.time">1d</span></h5>
+				  <p>{{x.body}}</p>
+				</div>
+				<hr>
+			</div>
+		</div>
+
+		<div class="add-comment-container">
+			<input type="text" placeholder="Add a comment" ng-model="newComment" ng-keyup="$event.keyCode == 13 ? addComment() : null" required/>
+		</div>
+
+	</div>
+</div>
+
+<div id="myModal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+  
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <button type="button" class="close" data-dismiss="modal">&times;</button>
+		  <h4 class="modal-title">Current website url address</h4>
+		</div>
+		<div class="modal-body">
+		  <p>{{url}}</p>
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		</div>
+	  </div>
+  
+	</div>
+  </div>
+
+
+<script src="./dist/bundle.js"></script>
+</body>
+</html>

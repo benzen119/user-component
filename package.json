@@ -1,0 +1,24 @@
+{
+  "name": "me",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "mocha",
+    "build": "npm install webpack sass-loader node-sass style-loader css-loader angular-moment moment mocha superagent --save-dev",
+    "start": "node server"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "angular-moment": "^1.1.0",
+    "css-loader": "^0.28.7",
+    "mocha": "^4.0.1",
+    "moment": "^2.19.0",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.0",
+    "superagent": "^3.6.3",
+    "webpack": "^3.6.0"
+  }
+}
